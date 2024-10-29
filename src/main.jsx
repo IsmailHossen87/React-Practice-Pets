@@ -11,6 +11,7 @@ import About from './Component/About';
 import Users from './Component/Users';
 import Footer from './Component/Footer';
 import UserDetails from './Component/UserDetails';
+import ShowAbout from './Component/ShowAbout';
 
 const router = createBrowserRouter([
  {
@@ -22,11 +23,8 @@ const router = createBrowserRouter([
     element:<HomeMain></HomeMain>
    },
    {
-    path:'/',
-    element:<Footer></Footer>
-   },
-   {
     path:'/About',
+    loader:()=> fetch('https://jsonplaceholder.typicode.com/posts'),
     element:<About></About>
    },
    {
@@ -39,6 +37,11 @@ const router = createBrowserRouter([
     loader:({params}) =>fetch(`https://openapi.programming-hero.com/api/peddy/pet/${params.UserId}`),
     element:<UserDetails></UserDetails>
    },
+   {
+    path:'/postShow/:useid',
+    loader:({params}) => fetch(`https://jsonplaceholder.typicode.com/posts/${params.useid}`),
+    element:<ShowAbout></ShowAbout>
+   }
   ]
  }
 ])

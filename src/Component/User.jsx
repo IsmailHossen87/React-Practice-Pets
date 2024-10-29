@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 
 export default function User({data}) {
     const {image,category,breed,petId}= data
-    console.log(data)
   return (
     <div>
       <div className="card bg-base-100 w-96 shadow-xl">

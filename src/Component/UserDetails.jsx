@@ -3,6 +3,7 @@ import { useLoaderData } from 'react-router-dom'
 
 export default function UserDetails() {
     const data = useLoaderData()
+    console.log(data)
    const {category,pet_details,image} = data.petData
      return (
         <div className="card bg-base-100 w-96 shadow-xl mt-6 mx-auto">
