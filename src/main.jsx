@@ -12,15 +12,17 @@ import Users from './Component/Users';
 import Footer from './Component/Footer';
 import UserDetails from './Component/UserDetails';
 import ShowAbout from './Component/ShowAbout';
+import Errors from './Component/Errors';
 
 const router = createBrowserRouter([
  {
   path:'/',
   element:<Home></Home>,
+  errorElement:<Errors></Errors>,
   children:[
    {
     path:'/',
-    element:<HomeMain></HomeMain>
+    element:<HomeMain></HomeMain>,
    },
    {
     path:'/About',

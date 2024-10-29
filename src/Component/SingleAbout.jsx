@@ -1,7 +1,17 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 export default function SingleAbout({data}) {
+    const navigate= useNavigate()
+
+
+
+    const showDetails =()=>{
+        navigate(`/Users`)
+        // navigate(-1)         1 step back
+    }
+
+
     const {body,id,title} = data
   return (
     <div className='border-green-500 border p-4 rounded-md mt-4'>
@@ -10,6 +20,7 @@ export default function SingleAbout({data}) {
       <h2 className='bg-yellow-100 py-2 px-3 mt-2'>{body}</h2>
       <div className="card-actions justify-start mt-3">
       <Link to={`/postShow/${id}`}><button className="btn btn-primary">About Details</button></Link>
+      <div className=''><button onClick={showDetails} className='btn btn-secondary'>User</button></div>
       </div>
      
     </div>
