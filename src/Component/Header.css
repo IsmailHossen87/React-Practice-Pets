@@ -1,4 +1,4 @@
-nav a.active{
+section a.active{
     text-decoration: underline;
     background-color: aqua;
     padding: 2px 12px;
